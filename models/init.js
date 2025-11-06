@@ -67,6 +67,7 @@ Message.belongsTo(User, { foreignKey: "sender_id" });
   try{
     await sequelize.authenticate(); 
     await sequelize.sync({alter:false})
+    // await sequelize.truncate({ cascade: true });
   }catch(error){ 
   }
 
