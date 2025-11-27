@@ -97,6 +97,6 @@ app.use('/chats',authMiddleware, chatRoutes);
 app.use('/messages',authMiddleware, messageRoutes);
 
 // ✅ Start the server using the HTTP server, not app.listen
-server.listen(PORT, '0.0.0.0', () => {
+server.listen(PORT, '127.0.0.1', () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
