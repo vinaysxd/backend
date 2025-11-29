@@ -83,7 +83,7 @@ socket.on('send-message',async ({toUserId, content, receiver})=>{
 })
 
   socket.on("disconnect", () => {
-    console.log(`❌ User ${socket.decoded.id} disconnected`);
+    console.log(`❌ User ${socket.decoded.id} disconnected testing CICD`);
     if (onlineUsers.get(socket.decoded.id) === socket.id) {
       onlineUsers.delete(socket.decoded.id); // cleanup only if this socket was the latest
     }
