@@ -43,7 +43,7 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          docker pull ${{ secrets.APP_NAME }}:latest
-          docker stop backend-api || true
-          docker rm backend-api || true
-          docker run -d --name backend-api -p 80:3000 ${{ secrets.APP_NAME }}:latest
+                cd /root/app                       # go to folder with docker-compose.yml
+                docker compose pull                # pull latest image
+                docker compose down                # stop previous container
+                docker compose up -d               # start with new image
