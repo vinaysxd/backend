@@ -44,6 +44,6 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         script: |
           docker pull ${{ secrets.APP_NAME }}:latest
-          docker stop myapp || true
-          docker rm myapp || true
-          docker run -d --name myapp -p 80:3000 ${{ secrets.APP_NAME }}:latest
+          docker stop backend-api || true
+          docker rm backend-api || true
+          docker run -d --name backend-api -p 80:3000 ${{ secrets.APP_NAME }}:latest
